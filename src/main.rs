@@ -1,19 +1,20 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use actix_web::{get, web, App, HttpResponse, HttpServer, Responder}; // import components from actix-web
+
+#[actix_web::main] // creates entry point for http server
+async fn main() -> std::io::Result<()> // Result may fail
+{
+    HttpServer::new(|| { // creates a new http server
+        App::new() // creates a new web application
+        .route("/", web::get().to(index)) // address , segway to index
+    })
+    .bind("127.0.0.1:8080")? // root address
+    .run()
+    .await // its an async func
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
-
-fn main() {
-    println!("The sum is {}", add(2, 3));
+// the index handler function
+async fn index() -> impl Responder // reutns an http response
+{
+    HttpResponse::Ok().body("Hello, Crissy!") // http response
 }
 
