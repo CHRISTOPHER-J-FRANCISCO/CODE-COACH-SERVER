@@ -4,4 +4,5 @@ A server for hosting the syntax you're being coached on.
 
 ## Dependencies
 
-- This project is being built on the Windows SDK. 
+- Visual Studio Build Tools (Desktop development with c++)
+- The Windows SDK. 
