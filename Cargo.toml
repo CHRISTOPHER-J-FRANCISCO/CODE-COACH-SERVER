@@ -10,3 +10,7 @@ tokio = { version = "1", features = ["full"] } # platform for writing asynchrono
 env_logger = "0.10" # environment variable drive logging library
 serde = { version = "1.0", features = ["derive"] } # serializes/deserializes ds
 serde_json = "1.0" # JSON data format for serde
+
+[[bin]]
+name = "code-coach-server-binary"
+path = "src/main.rs"
