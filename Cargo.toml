@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+actix-web = "4" # main web framework
+actix-rt = "2" # runtime library
+tokio = { version = "1", features = ["full"] } # platform for writing asynchronous runtime applications
+env_logger = "0.10" # environment variable drive logging library
+serde = { version = "1.0", features = ["derive"] } # serializes/deserializes ds
+serde_json = "1.0" # JSON data format for serde
